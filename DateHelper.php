@@ -5,7 +5,6 @@ class DateHelper {
     static function getDatedif($start, $end) {
         try {
             if (isValidTimeStamp($start) && isValidTimeStamp($end)) {
-                // Check if datedif <= 0
                 $dif = $end - $start;
                 if ($dif < 0) {
                     throw new Exception("Error: " . "Datedifference is negative.");
