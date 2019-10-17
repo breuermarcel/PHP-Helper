@@ -9,7 +9,7 @@ class ValidationHelper {
         'email'         => '[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+[.]+[a-z-A-Z]'
     ];
 
-    static function tryParse($value, $datatype) {
+    public function tryParse($value, $datatype) {
         switch ($datatype) {
             case "integer":
                 return intval($value);
@@ -22,17 +22,17 @@ class ValidationHelper {
         }
     }
 
-    static function isEmail($value) {
+    public function isEmail($value) {
         if(filter_var($value, FILTER_VALIDATE_EMAIL))
             return true;
     }
 
-    static function isFloat($value) {
+    public function isFloat($value) {
         if(filter_var($value, FILTER_VALIDATE_FLOAT)) 
             return true;
     }
 
-    static function isInt($value) {
+    public function isInt($value) {
         if(filter_var($value, FILTER_VALIDATE_INT)) 
             return true;
     }   
